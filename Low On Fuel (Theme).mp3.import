@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b4i7ke5e3rkvi"
+path="res://.godot/imported/Low On Fuel (Theme).mp3-ca7c2cdd0fe853d808a2f8381a69496d.mp3str"
+
+[deps]
+
+source_file="res://Low On Fuel (Theme).mp3"
+dest_files=["res://.godot/imported/Low On Fuel (Theme).mp3-ca7c2cdd0fe853d808a2f8381a69496d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

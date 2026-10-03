@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dp7jrqh2241ps"
+path="res://.godot/imported/Low On Oxygen (Theme).mp3-78131cd1589a84af487b7cf27c20c2bf.mp3str"
+
+[deps]
+
+source_file="res://Low On Oxygen (Theme).mp3"
+dest_files=["res://.godot/imported/Low On Oxygen (Theme).mp3-78131cd1589a84af487b7cf27c20c2bf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

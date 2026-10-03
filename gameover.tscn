@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cui0uhgkjt4gu"]
+
+[ext_resource type="FontFile" uid="uid://bsiv7e8i43qwj" path="res://MatrixTypeDisplay-Regular.ttf" id="1_4nh4k"]
+[ext_resource type="Script" uid="uid://bc5wsxdjcato5" path="res://death_lol.gd" id="2_eeur3"]
+[ext_resource type="AudioStream" uid="uid://drscs47xyl5oh" path="res://Death In Space (Theme).mp3" id="2_tpdqf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpdqf"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D" unique_id=929809466]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=684378773]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1120981782]
+offset_right = 2116.0
+offset_bottom = 1561.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tpdqf")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=2079988239]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -630.0
+offset_top = -87.5
+offset_right = 630.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_4nh4k")
+theme_override_font_sizes/font_size = 128
+text = "You died. Wow."
+script = ExtResource("2_eeur3")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1021532977]
+stream = ExtResource("2_tpdqf")
+volume_db = 2.0
+autoplay = true

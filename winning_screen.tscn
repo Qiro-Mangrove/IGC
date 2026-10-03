@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bxkc5xbtvakkj"]
+
+[ext_resource type="FontFile" uid="uid://bsiv7e8i43qwj" path="res://MatrixTypeDisplay-Regular.ttf" id="1_35fyq"]
+[ext_resource type="Script" uid="uid://dxdph1clrqt4h" path="res://win.gd" id="2_qd3de"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qd3de"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="WinningScreen" type="Node2D" unique_id=661643870]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1713096732]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1167398465]
+offset_right = 2116.0
+offset_bottom = 1561.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qd3de")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1604574735]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -518.0
+offset_top = -85.0
+offset_right = 742.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_35fyq")
+theme_override_font_sizes/font_size = 128
+text = "You won..."
+script = ExtResource("2_qd3de")

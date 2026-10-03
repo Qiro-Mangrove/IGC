@@ -1,0 +1,349 @@
+[gd_scene format=3 uid="uid://dqidl77s681dd"]
+
+[ext_resource type="Script" uid="uid://d4njik0nd6nq5" path="res://Player.gd" id="1_l3rv8"]
+[ext_resource type="Script" uid="uid://blusy3y8am00n" path="res://asteroid_spawner.gd" id="1_v4325"]
+[ext_resource type="Texture2D" uid="uid://cqf8osvtl3t11" path="res://spaceship.png" id="2_xpsff"]
+[ext_resource type="Texture2D" uid="uid://3g5odmqi45u3" path="res://Pointer.png" id="4_c3vuw"]
+[ext_resource type="Texture2D" uid="uid://cuq51o8fgv3yo" path="res://spaceman.png" id="4_xpsff"]
+[ext_resource type="Script" uid="uid://chqkqtfm8fsfw" path="res://furnace.gd" id="5_5inx3"]
+[ext_resource type="Script" uid="uid://c0si0tkrj2ju8" path="res://pointer.gd" id="5_78o8j"]
+[ext_resource type="Texture2D" uid="uid://b3sj3ogkwy6ls" path="res://fire-particles.png" id="6_8o2k6"]
+[ext_resource type="AudioStream" uid="uid://bx1n5cp05yf77" path="res://FireWoosh.wav" id="7_c5rd1"]
+[ext_resource type="AudioStream" uid="uid://beclf3tb1g7e5" path="res://IGC Main Theme.mp3" id="7_pb2vj"]
+[ext_resource type="Texture2D" uid="uid://mrnutx5op6dl" path="res://furnace.png" id="8_o1dwe"]
+[ext_resource type="AudioStream" uid="uid://dp7jrqh2241ps" path="res://Low On Oxygen (Theme).mp3" id="8_qxn0r"]
+[ext_resource type="Texture2D" uid="uid://b26ofvpsjocdf" path="res://Stars.png" id="9_pmrbh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cq66"]
+size = Vector2(2.5340176, 135.62059)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4325"]
+size = Vector2(2.4643822, 135.71758)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3vuw"]
+size = Vector2(45.827713, 64.69915)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmrbh"]
+atlas = ExtResource("2_xpsff")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1dwe"]
+atlas = ExtResource("2_xpsff")
+region = Rect2(0, 256, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5inx3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmrbh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1dwe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpsff"]
+size = Vector2(20, 4.254467)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1dwe"]
+size = Vector2(20, 5.3742104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nkuy"]
+atlas = ExtResource("6_8o2k6")
+region = Rect2(0, 0, 51, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jy8bo"]
+atlas = ExtResource("6_8o2k6")
+region = Rect2(51, 0, 51, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1q5r"]
+atlas = ExtResource("6_8o2k6")
+region = Rect2(102, 0, 51, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38k6c"]
+atlas = ExtResource("6_8o2k6")
+region = Rect2(153, 0, 51, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbjgi"]
+atlas = ExtResource("6_8o2k6")
+region = Rect2(204, 0, 51, 51)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ckhn7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nkuy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jy8bo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1q5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38k6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbjgi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4cq66"]
+radius = 62.649822
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5inx3"]
+atlas = ExtResource("4_xpsff")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o2k6"]
+atlas = ExtResource("4_xpsff")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5rd1"]
+atlas = ExtResource("4_xpsff")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmt4g"]
+atlas = ExtResource("4_xpsff")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pmrbh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5inx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8o2k6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5rd1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmt4g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pb2vj"]
+bg_color = Color(0.6967212, 0.87108994, 0.90628415, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxn0r"]
+bg_color = Color(0.38709134, 0.6207004, 0.75509334, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c5rd1"]
+bg_color = Color(0.67256385, 0.629044, 0.42953718, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fmt4g"]
+bg_color = Color(0.8779236, 0.876201, 0.12988806, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1dwe"]
+bg_color = Color(0.19793725, 0.19793725, 0.19793719, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5inx3"]
+bg_color = Color(0.53966343, 0.5396635, 0.5396634, 1)
+
+[node name="Ship" type="Node2D" unique_id=883429124]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=801251279]
+texture_filter = 1
+offset_left = -43520.0
+offset_top = -43904.0
+offset_right = 44446.0
+offset_bottom = 43445.0
+scale = Vector2(9.300491, 9.300491)
+texture = ExtResource("9_pmrbh")
+stretch_mode = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=429121012]
+position = Vector2(0, 5.9604645e-08)
+scale = Vector2(7.3754497, 7.310023)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=486946023]
+position = Vector2(-21.659798, -21.510426)
+rotation = 0.31415913
+scale = Vector2(0.99999934, 0.9999991)
+shape = SubResource("RectangleShape2D_4cq66")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1053554862]
+position = Vector2(21.844852, -21.470852)
+rotation = -0.31415915
+scale = Vector2(0.99999946, 0.9999992)
+shape = SubResource("RectangleShape2D_v4325")
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D" unique_id=847111918]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D/Area2D" unique_id=2003016081]
+position = Vector2(-9.051272e-07, 9.504223)
+scale = Vector2(1, 0.99999964)
+shape = SubResource("RectangleShape2D_c3vuw")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="StaticBody2D" unique_id=1092383619]
+texture_filter = 1
+scale = Vector2(0.55629015, 0.55629015)
+sprite_frames = SubResource("SpriteFrames_5inx3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=635365711]
+position = Vector2(0, -30.77966)
+scale = Vector2(1, 0.99999994)
+shape = SubResource("RectangleShape2D_xpsff")
+
+[node name="Furnace" type="Sprite2D" parent="." unique_id=969336032]
+texture_filter = 1
+position = Vector2(4, -238)
+scale = Vector2(5.404481, 5.404481)
+texture = ExtResource("8_o1dwe")
+script = ExtResource("5_5inx3")
+
+[node name="Area2D" type="Area2D" parent="Furnace" unique_id=1237090208]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furnace/Area2D" unique_id=109555184]
+position = Vector2(-0.74012667, 7.401267)
+scale = Vector2(1.3182544, 1)
+shape = SubResource("RectangleShape2D_o1dwe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Furnace" unique_id=870024097]
+visible = false
+position = Vector2(-5.5509496, 11.101899)
+sprite_frames = SubResource("SpriteFrames_ckhn7")
+frame_progress = 0.4369235
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Furnace" unique_id=748755279]
+stream = ExtResource("7_c5rd1")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=133494992]
+safe_margin = 4.0
+script = ExtResource("1_l3rv8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=2096384560]
+shape = SubResource("CircleShape2D_4cq66")
+
+[node name="SpacemanSprite" type="AnimatedSprite2D" parent="Player" unique_id=987669242]
+texture_filter = 1
+position = Vector2(0, -29)
+scale = Vector2(5.2961993, 5.2961993)
+sprite_frames = SubResource("SpriteFrames_pmrbh")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1318256609]
+position = Vector2(44, 30)
+scale = Vector2(7.3754497, 7.310023)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player/Camera2D" unique_id=381578016]
+
+[node name="Oxygen" type="ProgressBar" parent="Player/Camera2D/CanvasLayer" unique_id=824542470]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -477.0
+offset_top = -86.0
+offset_right = 477.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_pb2vj")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qxn0r")
+max_value = 1000.0
+step = 0.0
+show_percentage = false
+
+[node name="Power" type="ProgressBar" parent="Player/Camera2D/CanvasLayer" unique_id=221427411]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -477.0
+offset_top = -86.0
+offset_right = 477.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_c5rd1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fmt4g")
+max_value = 10000.0
+step = 0.0
+value = 1000.0
+show_percentage = false
+
+[node name="Scrap" type="ProgressBar" parent="Player/Camera2D/CanvasLayer" unique_id=1113509101]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -477.0
+offset_top = -132.0
+offset_right = 477.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_o1dwe")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5inx3")
+max_value = 10.0
+step = 0.0
+show_percentage = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="Player" unique_id=795722029]
+visible = false
+texture_filter = 1
+scale = Vector2(7.1146803, 7.1146803)
+texture = ExtResource("4_c3vuw")
+script = ExtResource("5_78o8j")
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="." unique_id=1109110170]
+stream = ExtResource("7_pb2vj")
+autoplay = true
+mix_target = 1
+max_polyphony = 4
+parameters/looping = true
+
+[node name="LowOxygenMusic" type="AudioStreamPlayer" parent="." unique_id=1877627800]
+stream = ExtResource("8_qxn0r")
+parameters/looping = true
+
+[node name="LowPowerMusic" type="AudioStreamPlayer" parent="." unique_id=1756769721]
+
+[node name="StuffSpawner" type="Node2D" parent="." unique_id=318710680]
+script = ExtResource("1_v4325")
+
+[connection signal="body_entered" from="StaticBody2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="StaticBody2D/Area2D" to="Player" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Furnace/Area2D" to="Furnace" method="_on_area_2d_body_entered"]
